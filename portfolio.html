@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Zubair Fahimdeen Muhammed - Cybersecurity analyst, SOC Analyst, Incident Response and Digital Forensics">
+
+    <title>Zubair Fahimdeen | Cybersecurity Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 17, 31, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .nav-container {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #36d399;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav ul a {
+            color: #94a3b8;
+            transition: 0.3s;
+        }
+
+        nav ul a:hover {
+            color: #36d399;
+        }
+
+        /* HERO */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .small-title {
+            color: #36d399;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #36d399;
+        }
+
+        .hero h2 {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: #94a3b8;
+            max-width: 700px;
+            font-size: 1.05rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px solid #334155;
+        }
+
+        .btn-primary {
+            background: #36d399;
+            color: #04110c;
+            border-color: #36d399;
+        }
+
+        .btn-secondary {
+            color: #f1f5f9;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* TERMINAL */
+
+        .terminal {
+            background: #030a12;
+            border: 1px solid #1e3a4f;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .terminal-top {
+            padding: 12px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            background: #64748b;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .terminal-body {
+            padding: 25px;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+            color: #b8c7d9;
+        }
+
+        .green {
+            color: #36d399;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 7px;
+            height: 15px;
+            background: #36d399;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+            max-width: 700px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: #0d1b2d;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #94a3b8;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .fact {
+            padding: 15px;
+            background: #091525;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+        }
+
+        .fact small {
+            display: block;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #10243a;
+            border: 1px solid #263c55;
+            color: #cbd5e1;
+            padding: 7px 10px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .project-number {
+            color: #36d399;
+            font-family: Consolas, monospace;
+            font-weight: bold;
+        }
+
+        .project h3 {
+            font-size: 1.35rem;
+            margin: 10px 0;
+        }
+
+        .project p {
+            color: #94a3b8;
+            margin-bottom: 18px;
+        }
+
+        .project ul {
+            padding-left: 20px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .project li {
+            margin-bottom: 6px;
+        }
+
+        .tech {
+            color: #60a5fa;
+            font-size: 0.85rem;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid #1e4d44;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 11px;
+            height: 11px;
+            background: #36d399;
+            border-radius: 50%;
+        }
+
+        .date {
+            color: #36d399;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .timeline-item h3 {
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: #94a3b8;
+            max-width: 800px;
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-item {
+            padding: 17px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .contact-item small {
+            display: block;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a:hover {
+            color: #36d399;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #1e293b;
+            padding: 25px 0;
+            color: #64748b;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* MOBILE */
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 850px) {
+
+            .hero,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #07111f;
+                padding: 20px;
+                flex-direction: column;
+                border-bottom: 1px solid #1e293b;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .skills,
+            .facts {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            Zubair<span>.</span>
+        </a>
+
+        <button class="mobile-menu">☰</button>
+
+        <ul id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section id="home">
+
+    <div class="container hero">
+
+        <div>
+
+            <div class="small-title">
+                Cybersecurity Portfolio
+            </div>
+
+            <h1>
+                Zubair Fahimdeen <span>Muhammed</span>
+            </h1>
+
+            <h2>
+                Cybersecurity analyst · SOC · Incident Response · Digital Forensics
+            </h2>
+
+            <p class="hero-description">
+                I am a Cybersecurity analyst focused on Security Operations,
+                threat detection, incident investigation, digital forensics,
+                and cybersecurity automation.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="terminal">
+
+            <div class="terminal-top">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="terminal-body">
+
+                <p>
+                    <span class="green">$</span> whoami
+                </p>
+
+                <p>
+                    DEEN
+                </p>
+
+                <br>
+
+                <p>
+                    <span class="green">$</span> focus
+                </p>
+
+                <p>
+                    SOC | Incident Response | Digital Forensics
+                </p>
+
+                <br>
+
+                <p>
+                    <span class="green">$</span> tools
+                </p>
+
+                <p>
+                    Splunk | Wazuh | Wireshark | Kali | Python
+                </p>
+
+                <br>
+
+                <p>
+                    <span class="green">$</span> status
+                </p>
+
+                <p>
+                    learning + building<span class="cursor"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+
+            <p>
+                A cybersecurity-focused profile built around practical
+                learning, technical investigation and continuous development.
+            </p>
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="card">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am a Cybersecurity student at the Air Force Institute
+                    of Technology (AFIT), Kaduna, Nigeria.
+                </p>
+
+                <br>
+
+                <p>
+                    My primary interests are Security Operations Center
+                    analysis, Incident Response, Digital Forensics,
+                    threat detection and security automation.
+                </p>
+
+                <br>
+
+                <p>
+                    I have practical experience working with security and
+                    networking tools including Splunk, Wazuh, Wireshark,
+                    Kali Linux, Scapy and iperf3.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Career Direction</h3>
+
+                <p>
+                    My goal is to become a highly skilled SOC Analyst and
+                    Incident Response / Digital Forensics professional.
+                </p>
+
+                <br>
+
+                <p>
+                    I want to develop security solutions that improve
+                    threat detection, automate repetitive SOC activities,
+                    accelerate investigations and support effective
+                    incident response.
+                </p>
+
+
+                <div class="facts">
+
+                    <div class="fact">
+                        <small>Field</small>
+                        Cybersecurity
+                    </div>
+
+                    <div class="fact">
+                        <small>Focus</small>
+                        SOC & Incident Response
+                    </div>
+
+                    <div class="fact">
+                        <small>Education</small>
+                        B.Sc. Cybersecurity
+                    </div>
+
+                    <div class="fact">
+                        <small>Location</small>
+                        Nigeria
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Technical Skills</h2>
+
+            <p>
+                Technologies, security concepts and tools I am
+                developing through coursework and hands-on practice.
+            </p>
+
+        </div>
+
+
+        <div class="skills">
+
+            <div class="card skill-card">
+
+                <h3>Security Operations</h3>
+
+                <div class="tags">
+                    <span class="tag">SOC Monitoring</span>
+                    <span class="tag">SIEM</span>
+                    <span class="tag">Alert Triage</span>
+                    <span class="tag">Log Analysis</span>
+                    <span class="tag">Threat Detection</span>
+                    <span class="tag">IOC Analysis</span>
+                </div>
+
+            </div>
+
+
+            <div class="card skill-card">
+
+                <h3>Incident Response</h3>
+
+                <div class="tags">
+                    <span class="tag">Incident Investigation</span>
+                    <span class="tag">NIST IR</span>
+                    <span class="tag">MITRE ATT&CK</span>
+                    <span class="tag">Containment</span>
+                    <span class="tag">Recovery</span>
+                    <span class="tag">Reporting</span>
+                </div>
+
+            </div>
+
+
+            <div class="card skill-card">
+
+                <h3>Network Security</h3>
+
+                <div class="tags">
+                    <span class="tag">TCP/IP</span>
+                    <span class="tag">DHCP</span>
+                    <span class="tag">ARP</span>
+                    <span class="tag">ICMP</span>
+                    <span class="tag">VLAN</span>
+                    <span class="tag">NAT</span>
+                    <span class="tag">VPN</span>
+                    <span class="tag">HTTP/HTTPS</span>
+                </div>
+
+            </div>
+
+
+            <div class="card skill-card">
+
+                <h3>Security Tools</h3>
+
+                <div class="tags">
+                    <span class="tag">Splunk</span>
+                    <span class="tag">Wazuh</span>
+                    <span class="tag">Wireshark</span>
+                    <span class="tag">Kali Linux</span>
+                    <span class="tag">Scapy</span>
+                    <span class="tag">iperf3</span>
+                </div>
+
+            </div>
+
+
+            <div class="card skill-card">
+
+                <h3>Programming</h3>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                </div>
+
+            </div>
+
+
+            <div class="card skill-card">
+
+                <h3>Security Concepts</h3>
+
+                <div class="tags">
+                    <span class="tag">Cryptography</span>
+                    <span class="tag">Hashing</span>
+                    <span class="tag">IDS/IPS</span>
+                    <span class="tag">Access Control</span>
+                    <span class="tag">Zero Trust</span>
+                    <span class="tag">Cloud Security</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Projects</h2>
+
+            <p>
+                Practical cybersecurity work and projects aligned
+                with my professional development.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+            <div class="card project">
+
+                <div class="project-number">
+                    01 / SECURITY AUTOMATION
+                </div>
+
+                <h3>
+                    Automated SOC Platform
+                </h3>
+
+                <p>
+                    A planned security platform designed to assist SOC
+                    analysts with alert analysis, investigation, triage,
+                    threat intelligence, incident response and reporting.
+                </p>
+
+                <ul>
+                    <li>Automated alert triage</li>
+                    <li>IOC extraction</li>
+                    <li>MITRE ATT&CK mapping</li>
+                    <li>Incident-response playbooks</li>
+                    <li>Tier 2 investigation reports</li>
+                </ul>
+
+                <div class="tech">
+                    Splunk · Wazuh · Python · Kali Linux · MITRE ATT&CK
+                </div>
+
+            </div>
+
+
+            <div class="card project">
+
+                <div class="project-number">
+                    02 / SIEM
+                </div>
+
+                <h3>
+                    Splunk Security Monitoring Lab
+                </h3>
+
+                <p>
+                    A hands-on SIEM environment for ingesting, searching,
+                    analyzing and visualizing security events.
+                </p>
+
+                <ul>
+                    <li>Splunk Enterprise deployment</li>
+                    <li>Log ingestion</li>
+                    <li>SPL queries</li>
+                    <li>IP and port analysis</li>
+                    <li>Security visualization</li>
+                </ul>
+
+                <div class="tech">
+                    Splunk Enterprise · SPL · Kali Linux
+                </div>
+
+            </div>
+
+
+            <div class="card project">
+
+                <div class="project-number">
+                    03 / NETWORK SECURITY
+                </div>
+
+                <h3>
+                    Network Traffic Analysis Lab
+                </h3>
+
+                <p>
+                    Practical network-security exercises involving packet
+                    capture, protocol analysis and network troubleshooting.
+                </p>
+
+                <ul>
+                    <li>ICMP capture</li>
+                    <li>DHCP analysis</li>
+                    <li>ARP analysis</li>
+                    <li>HTTP/HTTPS inspection</li>
+                    <li>iperf3 throughput testing</li>
+                </ul>
+
+                <div class="tech">
+                    Wireshark · Kali Linux · iperf3
+                </div>
+
+            </div>
+
+
+            <div class="card project">
+
+                <div class="project-number">
+                    04 / THREAT ANALYSIS
+                </div>
+
+                <h3>
+                    Threat Investigation Practice
+                </h3>
+
+                <p>
+                    Investigation exercises focused on suspicious network
+                    activity, indicators of compromise and structured
+                    incident-response analysis.
+                </p>
+
+                <ul>
+                    <li>Alert investigation</li>
+                    <li>Network IOC analysis</li>
+                    <li>Host investigation</li>
+                    <li>Incident documentation</li>
+                    <li>Response recommendations</li>
+                </ul>
+
+                <div class="tech">
+                    Wireshark · Splunk · MITRE ATT&CK · NIST
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Experience</h2>
+
+            <p>
+                Professional experience combined with practical
+                cybersecurity development.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    2022 — 2025
+                </div>
+
+                <h3>
+                    AI Data Annotation & Review
+                </h3>
+
+                <p>
+                    Worked on AI-focused annotation and review tasks
+                    involving structured labeling, quality assessment,
+                    guideline adherence and detailed evaluation of data.
+                    This experience strengthened my attention to detail,
+                    analytical thinking, consistency and quality control.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    CURRENT
+                </div>
+
+                <h3>
+                    Cybersecurity Practical Development
+                </h3>
+
+                <p>
+                    Developing hands-on cybersecurity skills through SOC,
+                    SIEM, network analysis and incident-response labs using
+                    Splunk, Wazuh, Wireshark, Kali Linux, Python and
+                    related security technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Education</h2>
+
+            <p>
+                Academic foundation supporting my cybersecurity career.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="date">
+                2024 — 2028
+            </div>
+
+            <h3>
+                Air Force Institute of Technology (AFIT), Kaduna
+            </h3>
+
+            <p>
+                B.Sc. Cybersecurity
+            </p>
+
+            <br>
+
+            <div class="tags">
+
+                <span class="tag">Cybersecurity</span>
+                <span class="tag">Network Security</span>
+                <span class="tag">Incident Response</span>
+                <span class="tag">Digital Forensics</span>
+                <span class="tag">Cloud Security</span>
+                <span class="tag">Cryptography</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                Open to cybersecurity opportunities, projects,
+                collaboration and professional connections.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="card">
+
+                <div class="contact-item">
+
+                    <small>Email</small>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zubairfahimdeen@gmail.com" target="_blank">
+    My Email
+</a>>
+
+                </div> 
+
+
+                <div class="contact-item">
+
+                    <small>LinkedIn</small>
+
+                    <a href=" https://www.linkedin.com/in/fahimdeen-zubair-819313363/" target="_blank">
+    LinkedIn Profile
+</a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <small>GitHub</small>
+
+                    <a href=" https://github.com/DEENXX-CLOUD" target="_blank">
+    GitHub Profile
+</a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <small>Location</small>
+
+                    Nigeria
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Professional Focus
+                </h3>
+
+                <br>
+
+                <p>
+                    SOC Analysis · Incident Response · Digital Forensics ·
+                    Threat Detection · Security Monitoring ·
+                    Cybersecurity Automation
+                </p>
+
+                <div class="buttons">
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zubairfahimdeen@gmail.com"
+   target="_blank"
+   class="btn btn-primary">
+    Email Me
+</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <p>
+            © <span id="year"></span> Zubair Fahimdeen Muhammed
+        </p>
+
+        <p>
+            Cybersecurity Portfolio
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* MOBILE MENU */
+
+    const menuButton = document.querySelector(".mobile-menu");
+    const navLinks = document.querySelector("#navLinks");
+
+    menuButton.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document.querySelectorAll("#navLinks a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+            navLinks.classList.remove("active");
+        });
+
+    });
+
+
+    /* CURRENT YEAR */
+
+    document.querySelector("#year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
